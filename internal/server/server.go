@@ -51,9 +51,26 @@ func NewServer(handler *handler.SubscriptionHandler, port string, logger *slog.L
 	}
 }
 
+func (s *Server) swaggerURL() string {
+	if url := os.Getenv("COOLIFY_URL"); url != "" {
+		return url + "/swagger/index.html"
+	}
+
+	if fqdn := os.Getenv("COOLIFY_FQDN"); fqdn != "" {
+		return "https://" + fqdn + "/swagger/index.html"
+	}
+
+	return fmt.Sprintf("http://localhost%s/swagger/index.html", s.httpServer.Addr)
+}
+
 func (s *Server) Start() error {
-	s.logger.Info("swagger UI available",
-		"url", fmt.Sprintf("http://localhost%s/swagger/index.html", s.httpServer.Addr))
+	s.logger.Info("server starting",
+		"addr", s.httpServer.Addr,
+	)
+
+	s.logger.Info("swagger ui available",
+		"url", s.swaggerURL(),
+	)
 
 	errCh := make(chan error, 1)
 	go func() {
