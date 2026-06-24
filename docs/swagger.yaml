@@ -72,7 +72,6 @@ definitions:
     - start_date
     - user_id
     type: object
-host: xgw8so00sggcg88ogok0s80c.95.79.96.242.sslip.io
 info:
   contact: {}
   description: API for managing subscriptions
