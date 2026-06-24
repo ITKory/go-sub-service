@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"subscription-service/internal/handler"
+	"subscription-service/internal/middleware"
 
 	httpSwagger "github.com/swaggo/http-swagger"
 )
@@ -42,7 +43,7 @@ func NewServer(handler *handler.SubscriptionHandler, port string, logger *slog.L
 	return &Server{
 		httpServer: &http.Server{
 			Addr:         ":" + port,
-			Handler:      mux,
+			Handler:      middleware.CORS(mux),
 			ReadTimeout:  15 * time.Second,
 			WriteTimeout: 15 * time.Second,
 			IdleTimeout:  60 * time.Second,

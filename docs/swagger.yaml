@@ -72,10 +72,10 @@ definitions:
     - start_date
     - user_id
     type: object
-host: localhost:8080
+host: xgw8so00sggcg88ogok0s80c.95.79.96.242.sslip.io
 info:
   contact: {}
-  description: REST API для агрегации данных об онлайн подписках пользователей
+  description: API for managing subscriptions
   title: Subscription Service API
   version: "1.0"
 paths:

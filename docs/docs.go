@@ -379,11 +379,11 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "xgw8so00sggcg88ogok0s80c.95.79.96.242.sslip.io",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Subscription Service API",
-	Description:      "REST API для агрегации данных об онлайн подписках пользователей",
+	Description:      "API for managing subscriptions",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

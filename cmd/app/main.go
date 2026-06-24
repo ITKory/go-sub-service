@@ -15,10 +15,11 @@ import (
 	"subscription-service/internal/dependencies"
 )
 
-// @title			Subscription Service API
-// @version		1.0
-// @host			localhost:8080
-// @BasePath		/
+// @title           Subscription Service API
+// @version         1.0
+// @description     API for managing subscriptions
+// @host            xgw8so00sggcg88ogok0s80c.95.79.96.242.sslip.io
+// @BasePath        /
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("warning: .env not found, using environment variables")
